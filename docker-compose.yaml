@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  nginxproxy:
+    container_name: "nginxproxy"
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      ### required for Let's Encrypt certificates
+      - ~/LetsEncrypt/certs:/etc/nginx/certs:ro
+      - nginx_vhosts:/etc/nginx/vhost.d
+      - nginx_html:/usr/share/nginx/html
+    # depends_on:
+    #   - expressdocker
+    networks:
+      - MainNetwork
+      - ExpressDockerMongoDB
+
+  letsencrypt:
+    container_name: "letsencrypt"
+    image: nginxproxy/acme-companion
+    environment:
+      - DEFAULT_EMAIL=sandro.spengler@web.de
+      - NGINX_PROXY_CONTAINER=nginxproxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - nginx_certs:/etc/nginx/certs:rw
+      - nginx_vhosts:/etc/nginx/vhost.d
+      - nginx_html:/usr/share/nginx/html
+      - ~/LetsEncrypt/certs:/etc/nginx/certs:rw
+    networks:
+      - MainNetwork
+    restart: always
+
+networks:
+  MainNetwork:
+  ExpressDockerMongoDB:
+
+volumes:
+  #### NGINX reverse proxy container volumes
+  nginx_certs:
+  nginx_vhosts:
+  nginx_html:
