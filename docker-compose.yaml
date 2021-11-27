@@ -13,11 +13,9 @@ services:
       - ~/LetsEncrypt/certs:/etc/nginx/certs:ro
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
-    # depends_on:
-    #   - expressdocker
     networks:
       - MainNetwork
-      - ExpressDockerMongoDB
+      - ExpressMongoDBNetwork
 
   letsencrypt:
     container_name: "letsencrypt"
@@ -37,7 +35,7 @@ services:
 
 networks:
   MainNetwork:
-  ExpressDockerMongoDB:
+  ExpressMongoDBNetwork:
 
 volumes:
   #### NGINX reverse proxy container volumes
