@@ -10,7 +10,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       ### required for Let's Encrypt certificates
-      - ~/LetsEncrypt/certs:/etc/nginx/certs:ro
+      - ~/LetsEncrypt/certs:/etc/nginx/certs
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
     networks:
@@ -28,7 +28,7 @@ services:
       # - nginx_certs:/etc/nginx/certs:rw
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
-      - ~/LetsEncrypt/certs:/etc/nginx/certs:rw
+      - ~/LetsEncrypt/certs:/etc/nginx/certs
     networks:
       - MainNetwork
     restart: always
