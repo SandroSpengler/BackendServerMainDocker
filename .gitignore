@@ -1,2 +1,3 @@
 scripts/runDockerComposeDev.sh
 docker-compose.dev.yaml
+launch.json
