@@ -7,6 +7,8 @@ docker-compose \
     -f ${MainDockerPath}docker-compose.prod.yaml \
     -f ${ExpressMongoDBPath}docker-compose.yaml \
     -f ${ExpressMongoDBPath}docker-compose.prod.yaml \
+    -f ${LeagueAbuserBackend}docker-compose.yaml \
+    -f ${LeagueAbuserBackend}docker-compose.dev.yaml \
     down --remove-orphans -v
 
 docker-compose \
@@ -14,6 +16,8 @@ docker-compose \
     -f ${MainDockerPath}docker-compose.prod.yaml \
     -f ${ExpressMongoDBPath}docker-compose.yaml \
     -f ${ExpressMongoDBPath}docker-compose.prod.yaml \
+    -f ${LeagueAbuserBackend}docker-compose.yaml \
+    -f ${LeagueAbuserBackend}docker-compose.dev.yaml \
     up -d \
     --build \
     # runs only one container

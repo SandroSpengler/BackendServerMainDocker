@@ -1,3 +1,4 @@
-scripts/runDockerComposeDev.sh
+scripts/runDockerComposeDevWindows.sh
+scripts/runDockerComposeDevLinux.sh
 docker-compose.dev.yaml
 launch.json
