@@ -37,6 +37,7 @@ services:
 networks:
   MainNetwork:
   ExpressMongoDBNetwork:
+  LeagueAbuserNetwork:
 
 volumes:
   #### NGINX reverse proxy container volumes
