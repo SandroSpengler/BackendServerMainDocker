@@ -4,7 +4,7 @@ CLEAR=$1
 
 docker-compose \
     -f ${MainDockerPath}docker-compose.yaml \
-    -f ${MainDockerPath}docker-compose.pi.yaml \
+    -f ${MainDockerPath}docker-compose.prod.yaml \
     -f ${ExpressMongoDBPath}docker-compose.yaml \
     -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
     -f ${LeagueAbuserBackend}docker-compose.yaml \
@@ -13,7 +13,7 @@ docker-compose \
 
 docker-compose \
     -f ${MainDockerPath}docker-compose.yaml \
-    -f ${MainDockerPath}docker-compose.pi.yaml \
+    -f ${MainDockerPath}docker-compose.prod.yaml \
     -f ${ExpressMongoDBPath}docker-compose.yaml \
     -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
     -f ${LeagueAbuserBackend}docker-compose.yaml \
