@@ -26,7 +26,6 @@ services:
       - NGINX_PROXY_CONTAINER=nginxproxy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      # - nginx_certs:/etc/nginx/certs:rw
       - nginx_vhosts:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
       - ~/LetsEncrypt/certs:/etc/nginx/certs
