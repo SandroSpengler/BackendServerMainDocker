@@ -11,21 +11,21 @@ if [[ $BUILD = "full" ]];
     then 
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.dev.yaml \
+            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.dev.yaml \
+            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
-            -f ${LeagueAbuserBackend}docker-compose.dev.yaml \
+            -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             down --remove-orphans -v
 
 
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.dev.yaml \
+            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.dev.yaml \
+            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
-            -f ${LeagueAbuserBackend}docker-compose.dev.yaml \
+            -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             up -d \
             --build \
             # runs only one container
@@ -33,11 +33,11 @@ if [[ $BUILD = "full" ]];
     else
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.dev.yaml \
+            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.dev.yaml \
+            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
-            -f ${LeagueAbuserBackend}docker-compose.dev.yaml \
+            -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             up -d \
             --build $BUILD \
             # runs only one container
