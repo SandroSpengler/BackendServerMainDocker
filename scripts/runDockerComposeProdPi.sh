@@ -10,20 +10,20 @@ BUILD=$1
 if [[ $BUILD = "full" ]];
     then 
         docker-compose \
-            -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
+            -f ${MainDockerPath}docker-compose.yaml \
+            -f ${MainDockerPath}docker-compose.prod.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             down --remove-orphans -v
 
 
         docker-compose \
-            -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
+            -f ${MainDockerPath}docker-compose.yaml \
+            -f ${MainDockerPath}docker-compose.prod.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             up -d \
@@ -32,10 +32,10 @@ if [[ $BUILD = "full" ]];
             # --no-deps expressdocker \
     else
         docker-compose \
-            -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.yaml \
-            -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
+            -f ${MainDockerPath}docker-compose.yaml \
+            -f ${MainDockerPath}docker-compose.prod.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             up -d \
