@@ -11,7 +11,7 @@ if [[ $BUILD = "full" ]];
     then 
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
+            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
             -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
@@ -21,7 +21,7 @@ if [[ $BUILD = "full" ]];
 
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
+            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
             -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
@@ -33,7 +33,7 @@ if [[ $BUILD = "full" ]];
     else
         docker-compose \
             -f ${WebsiteMainDocker}docker-compose.yaml \
-            -f ${WebsiteMainDocker}docker-compose.pi.yaml \
+            -f ${WebsiteMainDocker}docker-compose.prod.yaml \
             -f ${WebsiteExpressMongo}docker-compose.yaml \
             -f ${WebsiteExpressMongo}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
