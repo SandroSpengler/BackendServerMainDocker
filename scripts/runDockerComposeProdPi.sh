@@ -7,10 +7,6 @@ BUILD=$1
 #     echo "123"
 # fi
 
-WebsiteMainDocker="/c/Users/Sandro/Dropbox/0_Webdevelopment/Docker/Live/BackendServerMainDocker/"
-WebsiteExpressMongo="/c/Users/Sandro/Dropbox/0_Webdevelopment/Projects/NodeJs/Live/PersonalWebsiteExpressMongoDB/"
-LeagueAbuserBackend="/c/Users/Sandro/Dropbox/0_Webdevelopment/Projects/NodeJs/Live/LeagueAbuserBackend/"
-
 if [[ $BUILD = "full" ]];
     then 
         docker-compose \
