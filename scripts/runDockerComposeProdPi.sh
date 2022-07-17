@@ -45,7 +45,7 @@ if [[ $BUILD = "full" ]];
 fi
 
 
-if [[ $BUILD = "prune" ]];
+if [[ $BUILD = "down" ]];
     then 
         docker-compose \
             -f ${MainDockerPath}docker-compose.yaml \
