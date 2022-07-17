@@ -47,6 +47,18 @@ fi
 
 if [[ $BUILD = "prune" ]];
     then 
+        docker-compose \
+            -f ${MainDockerPath}docker-compose.yaml \
+            -f ${MainDockerPath}docker-compose.prod.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.yaml \
+            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
+            -f ${LeagueAbuserBackend}docker-compose.yaml \
+            -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
+            down --remove-orphans -v
+fi
+
+if [[ $BUILD = "prune" ]];
+    then 
         docker image prune
         docker volume prune
         docker network prune

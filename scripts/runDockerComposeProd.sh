@@ -2,6 +2,10 @@
 #2. Clears unnecessary images
 CLEAR=$1
 
+WebsiteMainDocker="/home/sandro/Dropbox/0_Webdevelopment/Docker/Live/BackendServerMainDocker/"
+WebsiteExpressMongo="/home/sandro/Dropbox/0_Webdevelopment/Projects/NodeJs/Live/PersonalWebsiteExpressMongoDB/"
+LeagueAbuserBackend="/home/sandro/Dropbox/0_Webdevelopment/Projects/NodeJs/Live/LeagueAbuserBackend/"
+
 docker-compose \
     -f ${MainDockerPath}docker-compose.yaml \
     -f ${MainDockerPath}docker-compose.prod.yaml \
