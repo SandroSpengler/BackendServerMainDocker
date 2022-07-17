@@ -12,8 +12,6 @@ if [[ $BUILD = "full" ]];
         docker-compose \
             -f ${MainDockerPath}docker-compose.yaml \
             -f ${MainDockerPath}docker-compose.prod.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             down --remove-orphans -v
@@ -22,8 +20,6 @@ if [[ $BUILD = "full" ]];
         docker-compose \
             -f ${MainDockerPath}docker-compose.yaml \
             -f ${MainDockerPath}docker-compose.prod.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             up -d \
@@ -50,8 +46,6 @@ if [[ $BUILD = "down" ]];
         docker-compose \
             -f ${MainDockerPath}docker-compose.yaml \
             -f ${MainDockerPath}docker-compose.prod.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.yaml \
-            -f ${ExpressMongoDBPath}docker-compose.pi.yaml \
             -f ${LeagueAbuserBackend}docker-compose.yaml \
             -f ${LeagueAbuserBackend}docker-compose.pi.yaml \
             down --remove-orphans -v
